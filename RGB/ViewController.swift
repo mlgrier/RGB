@@ -25,11 +25,15 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        greyAction(greySlider)
+        
     }
 
     @IBAction func greyAction(_ sender: UISlider) {
         
         view.backgroundColor = UIColor(white: CGFloat(sender.value), alpha: 1)
+        
+        greyLabel.text = String(format: "%.2f", sender.value)
     }
 
     @IBAction func rgbAction(_ sender: UISlider) {
@@ -39,7 +43,14 @@ class ViewController: UIViewController {
         let blue = CGFloat(blueSlider.value)
         
         view.backgroundColor = UIColor(red: red, green: green, blue: blue, alpha: 1)
+        
+        redLabel.text = String(format: "%.2f", redSlider.value)
+        greenLabel.text = String(format: "%.2f", greenSlider.value)
+        blueLabel.text = String(format: "%.2f", blueSlider.value)
+        
     }
 
+    @IBAction func reset() {
+    }
 }
 
